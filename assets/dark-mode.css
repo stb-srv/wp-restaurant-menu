@@ -1,0 +1,132 @@
+/**
+ * Dark Mode Styles
+ * @package WP_Restaurant_Menu
+ */
+
+/* Dark Mode Variables */
+:root {
+    --bg-color: #fff;
+    --text-color: #333;
+    --card-bg: #fff;
+    --card-border: #e0e0e0;
+    --header-bg: #f5f5f5;
+    --header-hover: #e0e0e0;
+    --input-bg: #fff;
+    --input-border: #ddd;
+    --meta-bg: #f5f5f5;
+    --price-color: #0073aa;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+:root[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --card-bg: #2a2a2a;
+    --card-border: #404040;
+    --header-bg: #333;
+    --header-hover: #404040;
+    --input-bg: #2a2a2a;
+    --input-border: #404040;
+    --meta-bg: #333;
+    --price-color: #4a9eff;
+    --shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* Apply Dark Mode to Menu Container */
+.wpr-menu-container {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.wpr-menu-search {
+    background: var(--input-bg);
+    border-color: var(--input-border);
+    color: var(--text-color);
+}
+
+.wpr-category-header {
+    background: var(--header-bg);
+    color: var(--text-color);
+}
+
+.wpr-category-header:hover {
+    background: var(--header-hover);
+}
+
+.wpr-menu-item {
+    background: var(--card-bg);
+    border-color: var(--card-border);
+    color: var(--text-color);
+}
+
+.wpr-menu-item-title {
+    color: var(--text-color);
+}
+
+.wpr-menu-item-description {
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.wpr-menu-item-price {
+    color: var(--price-color);
+}
+
+.wpr-allergen-icon {
+    background: var(--meta-bg);
+    border-color: var(--card-border);
+    color: var(--text-color);
+}
+
+/* Dark Mode Toggle Button */
+.wpr-dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    z-index: 9999;
+    padding: 12px 16px;
+    background: var(--card-bg);
+    border: 2px solid var(--card-border);
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px var(--shadow);
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.wpr-dark-mode-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+.wpr-dark-mode-toggle.position-right {
+    right: 20px;
+}
+
+.wpr-dark-mode-toggle.position-left {
+    left: 20px;
+}
+
+/* Dark Mode Icon */
+.wpr-dark-mode-icon {
+    font-size: 18px;
+}
+
+/* Global Dark Mode */
+body[data-theme="dark"] {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Smooth Transition */
+.wpr-menu-container,
+.wpr-menu-item,
+.wpr-category-header,
+.wpr-menu-search,
+.wpr-allergen-icon,
+.wpr-dark-mode-toggle {
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
